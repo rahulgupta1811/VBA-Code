@@ -1,0 +1,52 @@
+Sub Clone_PrevSheet()
+
+On Error GoTo Defaulterror
+
+    Dim Exist As Boolean
+    Dim Todaysdate As String
+    Dim YesterdayDate As String
+    Dim NowDay As String
+    
+    Todaysdate = Format(Date, "dd MMMM yyyy")
+    NowDay = Format(Date, "dddd")
+    'Checking if today is Monday
+        If NowDay = "Wednesday" Then
+            YesterdayDate = Format(Date - 3, "dd MMMM yyyy")
+        Else
+            YesterdayDate = Format(Date - 1, "dd MMMM yyyy")
+        End If
+    
+    'Checking if todays sheet exist or not
+        For i = 1 To Worksheets.Count
+            If Worksheets(i).Name = Todaysdate Then
+                Exist = True
+            End If
+        Next i
+        
+        If Not Exist Then
+            'MsgBox YesterdayDate
+            'MsgBox Todaysdate
+            Sheets(YesterdayDate).Copy after:=Sheets(YesterdayDate)
+            ActiveSheet.Name = Todaysdate
+            Sheets(YesterdayDate).Tab.Color = False
+            Sheets(Todaysdate).Tab.Color = vbRed
+            Dim CompleteDate  As String
+            CompleteDate = Format(Date, "dddd, MMMM dd, yyyy")
+            ActiveSheet.[C2].Value = CompleteDate
+            Dim msg As Integer
+            msg = MsgBox("Completed 1 of 2 Macro", vbInformation, "Done")
+           
+        Else
+            msg = MsgBox("(" & Todaysdate & ")" & " Sheet Already Exists", vbExclamation, "Stop")
+        
+        End If
+Done:
+    Exit Sub
+
+Defaulterror:
+    MsgBox "There is some data processing error", vbCritical, Error
+    
+        
+End Sub
+
+
