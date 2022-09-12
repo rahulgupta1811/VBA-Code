@@ -1,0 +1,196 @@
+Sub Addnames()
+
+Dim Todaysdate As String
+Todaysdate = Format(Date, "dd MMMM yyyy")
+Dim Sheetcount As Integer
+Sheetcount = Worksheets.Count
+Sheetcount = Sheetcount - 1
+Sheets(Sheetcount).Activate
+
+
+'Adding Headers
+[C208].Value = "Names"
+[D208].Value = "Count Completed"
+'[E208].Value = "Time Taken"
+'[F208].Value = "Total Time Spend in Hrs"
+
+'Adding Names
+[C209].Value = "Aamir Aslam"
+[C210].Value = "Ankur Ohri"
+[C211].Value = "Arjun Yadav"
+[C212].Value = "Deepak Vishwakarma"
+[C213].Value = "Deepakshi Sharma"
+[C214].Value = "Devansh Sharma"
+[C215].Value = "Devpriya Sharma"
+[C216].Value = "Lawrence Albert"
+[C217].Value = "Mariyah Ahmadi"
+[C218].Value = "Mayank Sharma"
+[C219].Value = "Naved Afzal"
+[C220].Value = "Nupur Aggarwal"
+[C221].Value = "Prakash Singh"
+[C222].Value = "Ram Bedathanapalli"
+[C223].Value = "Ranadip Ghosh"
+[C224].Value = "Renu Bansal"
+[C225].Value = "Sumendra Bajaj"
+[C226].Value = "Suvojit Chatterjee"
+[C227].Value = "Vishal Sharma"
+
+'Adding attributes to the coulumns
+
+Range("c208:D227").Borders.Weight = 2
+Range("c208:D227").Borders.LineStyle = xlContinuous
+Range("c208:D208").Font.Bold = True
+Range("c208:D208").Interior.Color = RGB(248, 203, 173)
+Range("c209:c227").Interior.Color = RGB(226, 239, 218)
+
+'Adding Values
+    'Deepak Score
+        Dim DeepakScore As Integer
+        Dim DeepakTimeMin As Integer
+        Dim DeepakTimeHr As Integer
+        DeepakScore = [D4].Value + [D5].Value + [D6].Value + [D8].Value + [D9].Value + [D10].Value + [D11].Value + [D12].Value + [D13].Value
+        'DeepakTimeMin = [E4].Value + [E5].Value + [E6].Value + [E8].Value + [E9].Value + [E10].Value + [E11].Value + [E12].Value + [E13].Value
+
+        [D212].Value = DeepakScore
+        '[E212].Value = DeepakTimeMin
+        '[F212].Value = [E212].Value / 60
+        '[F212] = Application.WorksheetFunction.Round(Range("F212"), 2)
+        'Dim DecDec As String
+        'DecDec = "0.00"
+        '[F212].NumberFormat = DecDec
+
+
+
+       'Deepakshi Score
+        Dim DeepakkshiScore As Integer
+        Dim DeepakshiTimeMin As Integer
+        Dim DeepakshiTimeHr As Integer
+        DeepakshiScore = [D17].Value + [D18].Value + [D19].Value + [D21].Value + [D22].Value + [D23].Value + [D24].Value + [D25].Value + [D26].Value
+        'DeepakshiTimeMin = [E17].Value + [E18].Value + [E19].Value + [E21].Value + [E22].Value + [E23].Value + [E24].Value + [E25].Value + [E26].Value
+
+        [D213].Value = DeepakshiScore
+        '[E213].Value = DeepakshiTimeMin
+        '[F213].Value = [E213].Value / 60
+        '[F213] = Application.WorksheetFunction.Round(Range("F213"), 2)
+        '[F213].NumberFormat = DecDec
+
+        'Devpriya Score
+        Dim DevpriyaScore As Integer
+        Dim DevpriyaTimeMin As Integer
+        Dim DevpriyaTimeHr As Integer
+        DevpriyaScore = [D30].Value + [D31].Value + [D32].Value + [D34].Value + [D35].Value + [D36].Value + [D37].Value + [D38].Value + [D39].Value
+        'DevpriyaTimeMin = [E30].Value + [E31].Value + [E32].Value + [E34].Value + [E35].Value + [E36].Value + [E37].Value + [E38].Value + [E39].Value
+
+        [D215].Value = DevpriyaScore
+        '[E215].Value = DevpriyaTimeMin
+        '[F215].Value = [E215].Value / 60
+        '[F215] = Application.WorksheetFunction.Round(Range("F215"), 2)
+        '[F215].NumberFormat = DecDec
+
+        'Mariyah Score
+        Dim MariyahScore As Integer
+        Dim MariyahTimeMin As Integer
+        Dim MariyahTimeHr As Integer
+        MariyahScore = [D43].Value + [D44].Value + [D45].Value + [D47].Value + [D48].Value + [D49].Value + [D50].Value + [D51].Value + [D52].Value
+        'MariyahTimeMin = [E43].Value + [E44].Value + [E45].Value + [E47].Value + [E48].Value + [E49].Value + [E50].Value + [E51].Value + [E52].Value
+
+        '[D217].Value = MariyahScore
+        '[E217].Value = MariyahTimeMin
+        '[F217].Value = [E217].Value / 60
+        '[F217] = Application.WorksheetFunction.Round(Range("F217"), 2)
+        '[F217].NumberFormat = DecDec
+
+        'Nupur Score
+        Dim NupurshiScore As Integer
+        Dim NupurTimeMin As Integer
+        Dim NupurTimeHr As Integer
+        NupurScore = [D69].Value + [D70].Value + [D71].Value + [D73].Value + [D74].Value + [D75].Value + [D76].Value + [D77].Value + [D78].Value
+        'NupurTimeMin = [E69].Value + [E70].Value + [E71].Value + [E73].Value + [E74].Value + [E75].Value + [E76].Value + [E77].Value + [E78].Value
+
+        [D220].Value = NupurScore
+        '[E220].Value = NupurTimeMin
+        '[F220].Value = [E220].Value / 60
+        '[F220] = Application.WorksheetFunction.Round(Range("F220"), 2)
+        '[F220].NumberFormat = DecDec
+
+        'Naved Score
+        Dim NavedshiScore As Integer
+        Dim NavedTimeMin As Integer
+        Dim NavedTimeHr As Integer
+        NavedScore = [D56].Value + [D57].Value + [D58].Value + [D60].Value + [D61].Value + [D62].Value + [D63].Value + [D64].Value + [D65].Value
+        'NavedTimeMin = [E56].Value + [E57].Value + [E58].Value + [E60].Value + [E61].Value + [E62].Value + [E63].Value + [E64].Value + [E65].Value
+
+        [D219].Value = NavedScore
+        '[E219].Value = NavedTimeMin
+        '[F219].Value = [E219].Value / 60
+        '[F219] = Application.WorksheetFunction.Round(Range("F219"), 2)
+        '[F219].NumberFormat = DecDec
+
+        'Ram Score
+        Dim RamshiScore As Integer
+        Dim RamTimeMin As Integer
+        Dim RamTimeHr As Integer
+        RamScore = [D82].Value + [D83].Value + [D84].Value + [D86].Value + [D87].Value + [D88].Value + [D89].Value + [D90].Value + [D90].Value
+        'RamTimeMin = [E82].Value + [E83].Value + [E84].Value + [E86].Value + [E87].Value + [E88].Value + [E689].Value + [E90].Value + [E90].Value
+
+        [D222].Value = RamScore
+        '[E222].Value = RamTimeMin
+        '[F222].Value = [E222].Value / 60
+        '[F222] = Application.WorksheetFunction.Round(Range("F222"), 2)
+        '[F222].NumberFormat = DecDec
+
+        'Ranadip Score
+        Dim RanadipshiScore As Integer
+        Dim RanadipTimeMin As Integer
+        Dim RanadipTimeHr As Integer
+        RanadipScore = [D121].Value + [D122].Value + [D123].Value + [D125].Value + [D126].Value + [D127].Value + [D128].Value + [D129].Value + [D130].Value + [D131].Value + [D132].Value + [D133].Value + [D135].Value + [D136].Value + [D137].Value + [D138].Value + [D139].Value + [D140].Value
+        'RanadipTimeMin = [E121].Value + [E122].Value + [E123].Value + [E125].Value + [E126].Value + [E127].Value + [E128].Value + [E129].Value + [E130].Value + [E131].Value + [E132].Value + [E133].Value + [E135].Value + [E136].Value + [E137].Value + [E138].Value + [E139].Value + [E140].Value
+        [D223].Value = RanadipScore
+        '[E223].Value = RanadipTimeMin
+        '[F223].Value = [E223].Value / 60
+        '[F223] = Application.WorksheetFunction.Round(Range("F223"), 2)
+        '[F223].NumberFormat = DecDec
+
+        'Ankur Score
+        Dim AnkurScore As Integer
+        Dim AnkurTimeMin As Integer
+        Dim AnkurTimeHr As Integer
+        AnkurshiScore = [D144].Value + [D145].Value + [D146].Value + [D148].Value + [D149].Value + [D150].Value + [D151].Value + [D152].Value + [D153].Value
+        'AnkurTimeMin = [E44].Value + [E145].Value + [E146].Value + [E148].Value + [E149].Value + [E150].Value + [E151].Value + [E152].Value + [E153].Value
+
+        [D210].Value = AnkurScore
+        '[E210].Value = AnkurTimeMin
+        '[F210].Value = [E210].Value / 60
+        '[F210] = Application.WorksheetFunction.Round(Range("F210"), 2)
+        '[F210].NumberFormat = DecDec
+
+        'Lawrence Score
+        Dim LawrenceScore As Integer
+        Dim LawrenceTimeMin As Integer
+        Dim LawrenceTimeHr As Integer
+        LawrenceScore = [D157].Value + [D158].Value + [D159].Value + [D161].Value + [D162].Value + [D163].Value + [D164].Value + [D165].Value + [D166].Value
+        'LawrenceTimeMin = [E157].Value + [E158].Value + [E159].Value + [E161].Value + [E162].Value + [E163].Value + [E164].Value + [E165].Value + [E166].Value
+        [D216].Value = LawrenceScore
+        '[E216].Value = LawrenceTimeMin
+        '[F216].Value = [E216].Value / 60
+        '[F216] = Application.WorksheetFunction.Round(Range("F216"), 2)
+        '[F216].NumberFormat = DecDec
+
+        'Prakash Score
+        Dim PrakashScore As Integer
+        Dim PrakashTimeMin As Integer
+        Dim PrakashTimeHr As Integer
+        PrakashScore = [D170].Value + [D171].Value + [D172].Value + [D174].Value + [D175].Value + [D176].Value + [D177].Value + [D178].Value + [D179].Value
+        'PrakashTimeMin = [E170].Value + [E171].Value + [E172].Value + [E174].Value + [E175].Value + [E176].Value + [E177].Value + [E178].Value + [E179].Value
+        '[D221].Value = PrakashScore
+        '[E221].Value = PrakashTimeMin
+        '[F221].Value = [E221].Value / 60
+        '[F221] = Application.WorksheetFunction.Round(Range("F221"), 2)
+        '[F221].NumberFormat = DecDec
+
+
+    Dim msg As Integer
+    msg = MsgBox("Completed 2 of 2 Macro", vbInformation, "Done")
+   'Worksheets("Sample").Visible = False
+
+End Sub
